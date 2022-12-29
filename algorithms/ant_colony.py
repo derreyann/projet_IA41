@@ -134,7 +134,7 @@ class ant_colony:
                 The heuristic of the node"""
             return 1 / self.graph[self.current][node]["time"]
         
-    def __init__(self, graph, start_node, alpha=0.5, beta=2, rho=0.5, n_ants=10, omega=100, first_pass=True, heuristic=None):
+    def __init__(self, graph, start_node, alpha=0.5, beta=2, rho=0.5, n_ants=50, omega=100, first_pass=True, heuristic=None):
         """Create an ant_colony object
         
         Args:
