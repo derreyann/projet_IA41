@@ -147,10 +147,10 @@ def coordinates_to_bounds(nodesgeocode):
     maxlon = max([float(longitude) for _, longitude in nodesgeocode])
     print(minlat, maxlat, minlon, maxlon)
     #Padding to get a bigger area
-    padding = 0.05 * (maxlat - minlat)
+    padding = 0.1 * (maxlat - minlat)
     minlat -= padding
     maxlat += padding
-    padding = 0.05 * (maxlon - minlon)
+    padding = 0.1 * (maxlon - minlon)
     minlon -= padding
     maxlon += padding
     #if the area is to linear, add padding to the other axis. This is to avoid the problem of the graph being a line
@@ -163,4 +163,5 @@ def coordinates_to_bounds(nodesgeocode):
         minlon -= padding / 2
         maxlon += padding / 2
     
+    print(minlat, maxlat, minlon, maxlon)
     return minlat, maxlat, minlon, maxlon
