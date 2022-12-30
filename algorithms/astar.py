@@ -37,11 +37,10 @@ def astar(Graph, source, target):
         # Calculate the great circle distance between the two points
         a = math.sin((lat2-lat1)/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin((lon2-lon1)/2)**2
         c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-        d = 6371000 * c 
-        d = d / 1000 #Convert to kilometers
-        d = d / 30 #Convert to minutes
+        d = 6371 * c 
+        t = (d / 30) * 3600 #Convert to seconds at 30 km/h
         
-        return d
+        return t
     
     if source == target:
         return (0, [source])
